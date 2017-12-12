@@ -4,12 +4,12 @@
       {{count}}
     </h2>
     <div>
-      <button @click="increment">
-        +
-      </button>
-      <button @click="decrement">
-        -
-      </button>
+      <a @click="increment">
+        <icon name="plus-circle"></icon>
+      </a>
+      <a @click="decrement">
+        <icon name="minus-circle"></icon>
+      </a>
     </div>
   </div>
 </template>
