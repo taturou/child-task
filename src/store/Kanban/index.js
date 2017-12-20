@@ -7,6 +7,10 @@ export default {
       {
         id: 0,
         name: "おきる",
+        due: {
+          hours: 6,
+          minutes: 35
+        },
         groupId: 1,
         openedTasks: [
           {id: 0, title: "めざましどけい を とめる"},
@@ -20,6 +24,10 @@ export default {
       {
         id: 1,
         name: "きがえる",
+        due: {
+          hours: 6,
+          minutes: 40
+        },
         groupId: 1,
         openedTasks: [
           {id: 2, title: "パンツ を はく"},
@@ -35,6 +43,10 @@ export default {
       {
         id: 2,
         name: "あさごはん",
+        due: {
+          hours: 7,
+          minutes: 5
+        },
         groupId: 1,
         openedTasks: [
           {id: 8, title: "あさごはん を たべる"},
@@ -49,6 +61,10 @@ export default {
       {
         id: 3,
         name: "はみがき",
+        due: {
+          hours: 7,
+          minutes: 20
+        },
         groupId: 1,
         openedTasks: [
           {id: 12, title: "じぶん はみがき"},
@@ -61,6 +77,10 @@ export default {
       {
         id: 4,
         name: "おべんとう",
+        due: {
+          hours: 7,
+          minutes: 25
+        },
         groupId: 1,
         openedTasks: [
           {id: 14, title: "ふりかけ を えらぶ"},
@@ -73,6 +93,10 @@ export default {
       {
         id: 5,
         name: "トイレ",
+        due: {
+          hours: 7,
+          minutes: 30
+        },
         groupId: 1,
         openedTasks: [
           {id: 16, title: "トイレ に いく"}
@@ -84,6 +108,10 @@ export default {
       {
         id: 6,
         name: "おしたく",
+        due: {
+          hours: 7,
+          minutes: 35
+        },
         groupId: 1,
         openedTasks: [
           {id: 17, title: "かみ を とく"},
@@ -99,6 +127,10 @@ export default {
       {
         id: 7,
         name: "おでかけ",
+        due: {
+          hours: 7,
+          minutes: 50
+        },
         groupId: 1,
         openedTasks: [
           {id: 22, title: "いってらっしゃい！"}
