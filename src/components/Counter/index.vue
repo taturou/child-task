@@ -20,12 +20,12 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'Counter',
   computed: {
-    ...mapGetters([
+    ...mapGetters('counter', [
       'count'
     ])
   },
   methods: {
-    ...mapMutations([
+    ...mapMutations('counter', [
       'increment',
       'decrement'
     ])

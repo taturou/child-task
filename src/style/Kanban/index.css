@@ -1,0 +1,142 @@
+.kanban {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.header {
+  display: table-header-group;
+}
+
+.head-story {
+  display: table-row;
+}
+
+.head-feature {
+  padding: 2px;
+  display: table-cell;
+  width: 100px;
+  background-color: #cccccc;
+  border: 1px solid gray;
+}
+
+.head-status {
+  padding: 2px;
+  display: table-cell;
+  background-color: #cccccc;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.body {
+  display: table-row-group;
+}
+
+.story {
+  display: table-row;
+  min-height: 100px;
+}
+
+.feature {
+  width: 100px;
+  min-height: 100px;
+  display: table-cell;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.projectName {
+  font-size: 70%;
+  color: gray;
+  background-color: lightgray;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.status {
+  min-height: 100px;
+  display: table-cell;
+  vertical-align: top;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.taskList {
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task {
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task > .id {
+  border-radius: 2px;
+  background: white;
+  padding: 0px 2px;
+  text-align: right;
+}
+
+.task > .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task.opened {
+  background-color: #A9DFBF;  
+  width: 80px;
+  height: 60px;
+}
+
+.task.working {
+  background-color: #F5B7B1;
+  width: 80px;
+  height: 80px;
+}
+
+.task.closed {
+  background-color: #D0D3D4;
+  width: 30px;
+  height: 50px;
+}
+
+.task.wont {
+  background-color: #DFDFDF;
+  width: 30px;
+  height: 50px;
+}
+
+.draggable {
+  cursor: move;  
+}
+
+.non-draggable {
+  cursor: default;
+}
+ 
+.clickable {
+  cursor: pointer;
+}
+
+.maru {
+  border-radius: 50%;
+  font-size: 0.8em;
+  line-height: 1.0em;
+  padding-top: 0.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: black;
+  border: 1px solid white;
+  background: white;
+}

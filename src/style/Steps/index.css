@@ -1,0 +1,89 @@
+.kanban {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.header {
+  display: table-header-group;
+}
+
+.head-story {
+  display: table-row;
+}
+
+.head-status {
+  padding: 2px;
+  display: table-cell;
+}
+.head-status:nth-child(2) {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.head-status > .title {
+  font-size: 2em;
+  text-align: center;
+  margin: auto;
+}
+
+.body {
+  display: table-row-group;
+}
+
+.status {
+  min-height: 3em;
+  display: table-cell;
+  vertical-align: top;
+}
+.status:nth-child(2) {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.taskList {
+  min-width: 100px;
+  min-height: 3em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task {
+  padding: 3px;
+  border-radius: 3px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 3em;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.task > .title {
+  margin: auto;
+  font-weight: bold;
+}
+
+.task.opened {
+  background-color: #99ccff;  
+}
+
+.task.closed {
+  background-color: #ffccff;
+}
+
+.task.wont {
+  background-color: gray;
+}
+
+.draggable {
+  cursor: move;  
+}
+
+.non-draggable {
+  cursor: default;
+}
+ 
+.clickable {
+  cursor: pointer;
+}
