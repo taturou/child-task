@@ -43,7 +43,7 @@
 
 .taskList {
   min-width: 100px;
-  min-height: 3em;
+  min-height: 5em;
   display: flex;
   flex-wrap: wrap;
 }
@@ -73,7 +73,7 @@
 }
 
 .task.wont {
-  background-color: gray;
+  background-color: darkviolet;
 }
 
 .draggable {

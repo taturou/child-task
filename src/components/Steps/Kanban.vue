@@ -1,21 +1,5 @@
 <template>
   <div>
-    <div class="clockBase">
-      <analog-clock
-        class="clock"
-        :now="true"
-        :title="'いま'">
-      </analog-clock>
-    </div>
-
-    <div class="dueBase">
-      <analog-clock
-        class="due"
-        :time="dueTime"
-        :title="'もくひょう'">
-      </analog-clock>
-    </div>
-    
     <el-container>
       <el-header>
         <h1>
@@ -97,7 +81,6 @@ import { mapActions } from 'vuex'
 import TaskOpened from './KanbanTaskOpened.vue'
 import TaskClosed from './KanbanTaskClosed.vue'
 import TaskWont from './KanbanTaskWont.vue'
-import AnalogClock from '@/components/AnalogClock'
 
 export default {
   name: 'StepsKanban',
@@ -105,21 +88,13 @@ export default {
     draggable,
     'opened-task': TaskOpened,
     'closed-task': TaskClosed,
-    'wont-task': TaskWont,
-    'analog-clock': AnalogClock
+    'wont-task': TaskWont
   },
   computed: {
     ...mapGetters("kanban", {
       story: "currentStory"
-    }),
-    dueTime: function() {
-      return {
-        hours: this.story.due.hours,
-        minutes: this.story.due.minutes,
-        seconds: 0
-      }
-    }
-  },
+    })
+  }
 }
 </script>
 
@@ -134,25 +109,4 @@ h1 {
   margin: 0px 0px 1em 0px;
   padding: 10px 0px;
 }
-
-.dueBase, .clockBase {
-  position: fixed;
-  bottom: calc(250px + 30px);
-  z-index: 100;
-}
-  
-.dueBase {
-  right: calc(250px + 30px);
-}
-  
-.clockBase {
-  right: calc(250px + 30px + 250px + 30px);
-}
-  
-.due, .clock {
-  display: block;
-  position: relative;
-  width: 250px;
-  height: 250px;
-}  
 </style>

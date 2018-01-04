@@ -1,61 +1,73 @@
 <template>
-  <section
-    class="clock"
-    ref="clock"
-    :style="clockStyles">
+  <div
+    class="area"
+    :style="areaStyles">
+    <section
+      class="clock"
+      ref="clock"
+      :style="clockStyles">
 
-    <div
-      v-for="(n, index) in Array(60)"
-      class="minuteMark"
-      ref="minuteMark"
-      :style="minuteMarkStyles(index)">
-      <i
-        :style="minuteMarkIStyles(index)">
-      </i>
-    </div>
-
-    <ul
-      :style="numberStyles">
-      <li
-        v-for="(number, index) in numbers"
-        :key="index">
-        <i>
-          {{number}}
+      <div
+        v-for="(n, index) in Array(60)"
+        class="minuteMark"
+        ref="minuteMark"
+        :style="minuteMarkStyles(index)">
+        <i
+          :style="minuteMarkIStyles(index)">
         </i>
-      </li>
-    </ul>
+      </div>
 
-    <div
-      class="title"
-      :style="titleStyles">
-      {{title}}
-    </div>
+      <ul
+        :style="numberStyles">
+        <li
+          v-for="(number, index) in numbers"
+          :key="index">
+          <i>
+            {{number}}
+          </i>
+        </li>
+      </ul>
 
-    <div
-      class="hourHand"
-      :style="hourHandStyles">
-    </div>
+      <div
+        class="title"
+        :style="titleStyles">
+        {{title}}
+      </div>
 
-    <div
-      class="minuteHand"
-      :style="minuteHandStyles"></div>
+      <div
+        class="hourHand"
+        :style="hourHandStyles">
+      </div>
 
-    <div
-      class="secondHand"
-      :style="secondHandStyles">
-    </div>
-    
-    <div
-      class="cercle"
-      :style="cercleStyles">
-    </div>
-  </section>
+      <div
+        class="minuteHand"
+        :style="minuteHandStyles"></div>
+
+      <div
+        class="secondHand"
+        :style="secondHandStyles">
+      </div>
+
+      <div
+        class="cercle"
+        :style="cercleStyles">
+      </div>
+    </section>
+    <section
+      class="bezel"
+      :style="bezelStyles">    
+    </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'AnalogClock',
   props: {
+    size: {
+      type: String,
+      default: "100px"
+    },
     title: {
       type: String,
       default: ""
@@ -80,22 +92,41 @@ export default {
         return ["12","1","2","3","4","5","6","7","8","9","10","11"]
       }
     },
-    colors: {
-      type: Object,
-      default: function() {
-        return {
-          title: "gray",
-          hand: {
-            hours: "red",
-            minutes: "blue",
-            seconds: "green",
-            cercle: "green"
-          },
-          number: "red",
-          minuteMark: "blue",
-          bezel: "black"
-        }
-      }
+    colorTitle: {
+      type: String,
+      default: "gray"
+    },
+    colorHandHours: {
+      type: String,
+      default: "red"
+    },
+    colorHandMinutes: {
+      type: String,
+      default: "blue"
+    },
+    colorHandSeconds: {
+      type: String,
+      default: "green"
+    },
+    colorHandCercle: {
+      type: String,
+      default: "green"
+    },
+    colorNumber: {
+      type: String,
+      default: "red"
+    },
+    colorMinuteMark: {
+      type: String,
+      default: "blue"
+    },
+    colorDial: {
+      type: String,
+      default: "white"
+    },
+    colorBezel: {
+      type: String,
+      default: "black"
     }
   },
   data() {
@@ -106,28 +137,38 @@ export default {
         minutes: 2,
         seconds: 1
       },
-      bezelWidth: 1,
+      bezelWidth: 2,
       intervalId: undefined
     }
   },
   computed: {
+    areaStyles: function() {
+      return {
+        width: this.size,
+        height: this.size
+      }
+    },
+    bezelStyles: function() {
+      return {
+        border: this.bezelWidth + "px solid " + this.colorBezel
+      }
+    },
     clockStyles: function() {
       return {
-        "background-color": "white",
-        border: this.bezelWidth + "px solid " + this.colors.bezel
+        "background-color": this.colorDial,
       }
     },
     numberStyles: function() {
       return {
         fontSize: this.fontSize + "px",
         "font-weight": "bold",
-        color: this.colors.number
+        color: this.colorNumber
       }
     },
     titleStyles: function() {
       return {
         fontSize: (this.fontSize) + "px",
-        color: this.colors.title
+        color: this.colorTitle
       }
     },
     hourHandStyles: function() {
@@ -135,7 +176,7 @@ export default {
         width: this.handWidth.hours + "px",
         left: "calc(50% - " + (this.handWidth.hours / 2) + "px)",
         transform: "rotate(" + (30 * this.time.hours + 0.5 * this.time.minutes) + "deg)",
-        "background-color": this.colors.hand.hours
+        "background-color": this.colorHandHours
       }
     },
     minuteHandStyles: function() {
@@ -143,7 +184,7 @@ export default {
         width: this.handWidth.minutes + "px",
         left: "calc(50% - " + (this.handWidth.minutes / 2) + "px)",
         transform: "rotate(" + (6 * this.time.minutes + 0.1 * this.time.seconds) + "deg)",
-        "background-color": this.colors.hand.minutes
+        "background-color": this.colorHandMinutes
       }
     },
     secondHandStyles: function() {
@@ -151,14 +192,14 @@ export default {
         width: this.handWidth.seconds + "px",
         left: "calc(50% - " + (this.handWidth.seconds / 2) + "px)",
         transform: "rotate(" + (6 * this.time.seconds) + "deg)",
-        "background-color": this.colors.hand.seconds
+        "background-color": this.colorHandSeconds
       }
     },
     cercleStyles: function() {
       return {
         width: (this.handWidth.hours * 1.5) + "px",
         height: (this.handWidth.hours * 1.5) + "px",
-        "background-color": this.colors.hand.cercle
+        "background-color": this.colorHandCercle
       }
     }
   },
@@ -174,7 +215,7 @@ export default {
       return {
         width: width + "px",
         height: height + "%",
-        "background-color": this.colors.minuteMark
+        "background-color": this.colorMinuteMark
       }
     },
     setNowTime: function() {
@@ -204,6 +245,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div.area {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+ 
+section.bezel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+  
 section.clock {
   position: absolute;
   top: 0;

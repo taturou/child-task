@@ -11,23 +11,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/counter',
-      name: 'Counter',
-      component: Counter
+      name: 'Steps',
+      component: Steps
     },
     {
       path: '/kanban',
       name: 'Kanban',
       component: Kanban
-    },
-    {
-      path: '/steps',
-      name: 'Steps',
-      component: Steps
     }
   ]
 })

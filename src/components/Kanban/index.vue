@@ -9,10 +9,12 @@
           やること 
           <span class="maru">{{numOpened}}</span>
         </div>
+<!--
         <div class="head-status">
           やってる！
           <span class="maru">{{numWorking}}</span>
         </div>
+-->
         <div class="head-status">
           おわった！
           <span class="maru">{{numClosed}}</span>
@@ -48,6 +50,7 @@
           </draggable>
         </div>
         <!-- Working -->
+<!--
         <div class="status">
           <draggable
             v-model="story.workingTasks"
@@ -61,6 +64,7 @@
             </working-task>
           </draggable>
         </div>
+-->
         <!-- Closed -->
         <div class="status">
           <draggable

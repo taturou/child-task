@@ -2,16 +2,10 @@
   <div>
     <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
-        <router-link to="/" class="none-decoration">HelloWorld</router-link>
+        <router-link to="/" class="none-decoration">ゆい</router-link>
       </el-menu-item>
       <el-menu-item index="2">
-        <router-link to="/counter" class="none-decoration">Counter</router-link>
-      </el-menu-item>
-      <el-menu-item index="3">
         <router-link to="/kanban" class="none-decoration">Kanban</router-link>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <router-link to="/steps" class="none-decoration">Steps</router-link>
       </el-menu-item>
     </el-menu>
   </div>

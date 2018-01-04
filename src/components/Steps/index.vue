@@ -8,18 +8,22 @@
         <steps-kanban></steps-kanban>
       </el-col>
     </el-row>
+
+    <steps-clock></steps-clock>
   </div>
 </template>
 
 <script>
 import Story from './Story.vue'
 import Kanban from './Kanban.vue'
+import Clock from './Clock.vue'
 
 export default {
   name: 'Steps',
   components: {
     "steps-story": Story,
-    "steps-kanban": Kanban
+    "steps-kanban": Kanban,
+    "steps-clock": Clock
   }
 }
 </script>
