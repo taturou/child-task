@@ -1,13 +1,17 @@
 export default {
   namespaced: true,
   state: {
+    num_stories: {
+      1: 8,
+      2: 5
+    },
     num_tasks: {
-      1: 22,
-      2: 1
+      1: 29,
+      2: 28
     },
     current_story_index: {
       1: 0,
-      2: 8
+      2: 0
     },
     stories: [
       {
@@ -21,7 +25,7 @@ export default {
         openedTasks: [
           {id: 0, title: "⏰めざましどけい を とめる"},
           {id: 1, title: "🚽トイレ に いく"},
-          {id: 27, title: "🚪ドア を しめる"}
+          {id: 2, title: "🚪ドア を しめる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -36,14 +40,14 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 2, title: "👙パンツ を はく"},
-          {id: 3, title: "👕シャツ を きる"},
-          {id: 4, title: "👖ズボン を はく"},
-          {id: 5, title: "👚うわぎ を きる"},
+          {id: 3, title: "👙パンツ を はく"},
+          {id: 4, title: "👕シャツ を きる"},
+          {id: 5, title: "👖ズボン を はく"},
+          {id: 6, title: "👚うわぎ を きる"},
           {id: 7, title: "🧦くつした を はく"},
-          {id: 23, title: "せんたくもの の うらおもて を なおす"},
-          {id: 24, title: "せんたくもの を カゴ に いれる"},
-          {id: 25, title: "スリープガウン を ハンガー に かける"}
+          {id: 8, title: "せんたくもの の うらおもて を なおす"},
+          {id: 9, title: "せんたくもの を カゴ に いれる"},
+          {id: 10, title: "スリープガウン を ハンガー に かける"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -58,12 +62,12 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 8, title: "🥪あさごはん を たべる"},
-          {id: 9, title: "💊くすり を のむ"},
-          {id: 26, title: "🍵おちゃ を のむ"},
-          {id: 29, title: "🍽おさら を さげる"},
-          {id: 10, title: "👏て を あらう"},
-          {id: 11, title: "😉かお を あらう"}
+          {id: 11, title: "🥪あさごはん を たべる"},
+          {id: 12, title: "💊くすり を のむ"},
+          {id: 13, title: "🍵おちゃ を のむ"},
+          {id: 14, title: "🍽おさら を さげる"},
+          {id: 15, title: "👏て を あらう"},
+          {id: 16, title: "😉かお を あらう"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -78,8 +82,8 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 12, title: "😁じぶん はみがき"},
-          {id: 13, title: "😁しあげ はみがき"}
+          {id: 17, title: "😁じぶん はみがき"},
+          {id: 18, title: "😁しあげ はみがき"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -94,8 +98,8 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 14, title: "🍚ふりかけ を えらぶ"},
-          {id: 15, title: "🍱おべんとう を いれる"}
+          {id: 19, title: "🍚ふりかけ を えらぶ"},
+          {id: 20, title: "🍱おべんとう を いれる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -110,8 +114,8 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 16, title: "🚽トイレ に いく"},
-          {id: 28, title: "🚪ドア を しめる"}
+          {id: 21, title: "🚽トイレ に いく"},
+          {id: 22, title: "🚪ドア を しめる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -126,11 +130,11 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 17, title: "💇かみ を とく"},
-          {id: 18, title: "🧥ジャンパー を きる"},
-          {id: 19, title: "🧥えんぷく を きる"},
-          {id: 20, title: "👒ぼうし を かぶる"},
-          {id: 21, title: "👜えほんかばん を よういする"}
+          {id: 23, title: "💇かみ を とく"},
+          {id: 24, title: "🧥ジャンパー を きる"},
+          {id: 25, title: "🧥えんぷく を きる"},
+          {id: 26, title: "👒ぼうし を かぶる"},
+          {id: 27, title: "👜えほんかばん を よういする"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -145,7 +149,7 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 22, title: "🚌いってらっしゃい！"}
+          {id: 28, title: "🚌いってらっしゃい！"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -153,6 +157,87 @@ export default {
       },
       {
         id: 8,
+        name: "おふろ",
+        due: {
+          hours: 18,
+          minutes: 30
+        },
+        groupId: 2,
+        openedTasks: [
+          {id: 30, title: "せんたくもの の うらおもて を なおす"},
+          {id: 31, title: "せんたくもの を カゴ に いれる"},
+          {id: 32, title: "🛀おふろ に はいる"},
+          {id: 33, title: "👙パンツ を はく"},
+          {id: 34, title: "👘パジャマ を きる"},
+        ],
+        workingTasks: [],
+        closedTasks: [],
+        wontTasks: []
+      },
+      {
+        id: 9,
+        name: "よるごはん",
+        due: {
+          hours: 19,
+          minutes: 30
+        },
+        groupId: 2,
+        openedTasks: [
+          {id: 35, title: "🍖よるごはん を たべる"},
+          {id: 36, title: "💊くすり を のむ"},
+          {id: 37, title: "🍵おちゃ を のむ"},
+          {id: 38, title: "🍽おさら を さげる"},
+          {id: 39, title: "👏て を あらう"},
+          {id: 40, title: "😉かお を あらう"}
+        ],
+        workingTasks: [],
+        closedTasks: [],
+        wontTasks: []
+      },
+      {
+        id: 10,
+        name: "はみがき",
+        due: {
+          hours: 19,
+          minutes: 45
+        },
+        groupId: 2,
+        openedTasks: [
+          {id: 41, title: "😁じぶん はみがき"},
+          {id: 42, title: "😁しあげ はみがき"}
+        ],
+        workingTasks: [],
+        closedTasks: [],
+        wontTasks: []
+      },
+      {
+        id: 11,
+        name: "おしたく",
+        due: {
+          hours: 20,
+          minutes: 0
+        },
+        groupId: 2,
+        openedTasks: [
+          {id: 43, title: "🥛コップ を ふくろ に いれる"},
+          {id: 44, title: "🥛コップ を かばん に いれる"},
+          {id: 45, title: "🥢はし、🥄スプーン を かばん に いれる"},
+          {id: 46, title: "ナプキン を かばん に いれる"},
+          {id: 47, title: "コマ を かばん に いれる"},
+          {id: 48, title: "なわとび を かばん に いれる"},
+          {id: 49, title: "🤧ティッシュ を ポケット に いれる"},
+          {id: 50, title: "🚰ハンカチ を ポケット に いれる"},
+          {id: 51, title: "📛バッチ を つける"},
+          {id: 52, title: "🎗️リボン を つける"},
+          {id: 53, title: "🎒おきがえぶくろ を よういする"},
+          {id: 54, title: "📚えほんぶくろ を よういする"}
+        ],
+        workingTasks: [],
+        closedTasks: [],
+        wontTasks: []
+      },
+      {
+        id: 12,
         name: "ねる",
         due: {
           hours: 20,
@@ -160,7 +245,8 @@ export default {
         },
         groupId: 2,
         openedTasks: [
-          {id: 30, title: "おやすみなさい♪"}
+          {id: 55, title: "👘スリープガウン を きる"},
+          {id: 56, title: "🛏️おやすみなさい♪"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -170,13 +256,7 @@ export default {
   },
   getters: {
     numStories: state => (group_id) => {
-      let total = 0;
-      state.stories.forEach((story, index, array) => {
-        if (story.groupId === group_id) {
-          total += 1;
-        }
-      })
-      return total;
+      return state.num_stories[group_id];
     },
     numTasks: state => (group_id) => {
       return state.num_tasks[group_id];
@@ -185,7 +265,11 @@ export default {
       return state.current_story_index[group_id]
     },
     currentStory: state => (group_id) => {
-      return state.stories[state.current_story_index[group_id]]
+      let index = state.current_story_index[group_id];
+      if (group_id === 2) {
+        index += state.num_stories[1];
+      }
+      return state.stories[index];
     },
     Stories: state => (group_id) => {
       return state.stories.filter((story, index, array) => {
@@ -250,21 +334,8 @@ export default {
   actions: {
     toNextStory(context, group_id) {
       let index = context.state.current_story_index[group_id] + 1;
-      while (1) {
-        while (1) {
-          if (index >= context.state.stories.length) {
-            index = 0;
-          } else if (context.state.stories[index].groupId != group_id) {
-            index += 1;
-          } else {
-            break;
-          }
-        }
-        if (index >= context.state.stories.length) {
-          index = 0;
-        } else {
-          break;
-        }        
+      if (index >= context.getters.numStories(group_id)) {
+        index = 0;
       }
       context.commit('setCurrentStoryIndex', {group_id: group_id, index: index})
     }
