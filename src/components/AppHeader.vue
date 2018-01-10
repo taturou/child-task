@@ -7,6 +7,9 @@
       <el-menu-item index="2">
         <router-link to="/kanban" class="none-decoration">Kanban</router-link>
       </el-menu-item>
+      <el-menu-item index="3">
+        <router-link to="/orm" class="none-decoration">ORM</router-link>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>

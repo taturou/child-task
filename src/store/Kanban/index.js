@@ -9,13 +9,13 @@ export default {
         name: "おきる",
         due: {
           hours: 6,
-          minutes: 35
+          minutes: 40
         },
         groupId: 1,
         openedTasks: [
-          {id: 0, title: "めざましどけい を とめる"},
-          {id: 1, title: "トイレ に いく"
-          }
+          {id: 0, title: "⏰めざましどけい を とめる"},
+          {id: 1, title: "🚽トイレ に いく"},
+          {id: 27, title: "🚪ドア を しめる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -26,15 +26,18 @@ export default {
         name: "きがえる",
         due: {
           hours: 6,
-          minutes: 40
+          minutes: 45
         },
         groupId: 1,
         openedTasks: [
-          {id: 2, title: "パンツ を はく"},
-          {id: 3, title: "シャツ を きる"},
-          {id: 4, title: "ズボン を はく"},
-          {id: 5, title: "うわぎ を きる"},
-          {id: 7, title: "くつした を はく"}
+          {id: 2, title: "👙パンツ を はく"},
+          {id: 3, title: "👕シャツ を きる"},
+          {id: 4, title: "👖ズボン を はく"},
+          {id: 5, title: "👚うわぎ を きる"},
+          {id: 7, title: "🧦くつした を はく"},
+          {id: 23, title: "せんたくもの の うらおもて を なおす"},
+          {id: 24, title: "せんたくもの を カゴ に いれる"},
+          {id: 25, title: "スリープガウン を ハンガー に かける"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -45,14 +48,16 @@ export default {
         name: "あさごはん",
         due: {
           hours: 7,
-          minutes: 5
+          minutes: 15
         },
         groupId: 1,
         openedTasks: [
-          {id: 8, title: "あさごはん を たべる"},
-          {id: 9, title: "くすり を のむ"},
-          {id: 10, title: "て を あらう"},
-          {id: 11, title: "かお を あらう"}
+          {id: 8, title: "🥪あさごはん を たべる"},
+          {id: 9, title: "💊くすり を のむ"},
+          {id: 26, title: "🍵おちゃ を のむ"},
+          {id: 29, title: "🍽おさら を さげる"},
+          {id: 10, title: "👏て を あらう"},
+          {id: 11, title: "😉かお を あらう"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -63,12 +68,12 @@ export default {
         name: "はみがき",
         due: {
           hours: 7,
-          minutes: 20
+          minutes: 25
         },
         groupId: 1,
         openedTasks: [
-          {id: 12, title: "じぶん はみがき"},
-          {id: 13, title: "しあげ はみがき"}
+          {id: 12, title: "😁じぶん はみがき"},
+          {id: 13, title: "😁しあげ はみがき"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -79,12 +84,12 @@ export default {
         name: "おべんとう",
         due: {
           hours: 7,
-          minutes: 25
+          minutes: 30
         },
         groupId: 1,
         openedTasks: [
-          {id: 14, title: "ふりかけ を えらぶ"},
-          {id: 15, title: "おべんとう を いれる"}
+          {id: 14, title: "🍚ふりかけ を えらぶ"},
+          {id: 15, title: "🍱おべんとう を いれる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -95,11 +100,12 @@ export default {
         name: "トイレ",
         due: {
           hours: 7,
-          minutes: 30
+          minutes: 35
         },
         groupId: 1,
         openedTasks: [
-          {id: 16, title: "トイレ に いく"}
+          {id: 16, title: "🚽トイレ に いく"},
+          {id: 28, title: "🚪ドア を しめる"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -110,15 +116,15 @@ export default {
         name: "おしたく",
         due: {
           hours: 7,
-          minutes: 35
+          minutes: 45
         },
         groupId: 1,
         openedTasks: [
-          {id: 17, title: "かみ を とく"},
-          {id: 18, title: "ジャンパー を きる"},
-          {id: 19, title: "えんぷく を きる"},
-          {id: 20, title: "ぼうし を かぶる"},
-          {id: 21, title: "えほんかばん を よういする"}
+          {id: 17, title: "💇かみ を とく"},
+          {id: 18, title: "🧥ジャンパー を きる"},
+          {id: 19, title: "🧥えんぷく を きる"},
+          {id: 20, title: "👒ぼうし を かぶる"},
+          {id: 21, title: "👜えほんかばん を よういする"}
         ],
         workingTasks: [],
         closedTasks: [],
@@ -133,7 +139,7 @@ export default {
         },
         groupId: 1,
         openedTasks: [
-          {id: 22, title: "いってらっしゃい！"}
+          {id: 22, title: "🚌いってらっしゃい！"}
         ],
         workingTasks: [],
         closedTasks: [],

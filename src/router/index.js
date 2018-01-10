@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Counter from '@/components/Counter'
 import Kanban from '@/components/Kanban'
 import Steps from '@/components/Steps'
+import Orm from '@/components/Orm'
 
 Vue.use(Router)
 
@@ -18,6 +17,11 @@ export default new Router({
       path: '/kanban',
       name: 'Kanban',
       component: Kanban
+    },
+    {
+      path: '/orm',
+      name: 'Orm',
+      component: Orm
     }
   ]
 })
