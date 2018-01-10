@@ -84,6 +84,12 @@ import TaskWont from './KanbanTaskWont.vue'
 
 export default {
   name: 'StepsKanban',
+  props: {
+    group_id: {
+      type: Number,
+      required: true,
+    },
+  },
   components: {
     draggable,
     'opened-task': TaskOpened,
@@ -91,9 +97,12 @@ export default {
     'wont-task': TaskWont
   },
   computed: {
-    ...mapGetters("kanban", {
-      story: "currentStory"
-    })
+    ...mapGetters("kanban", [
+      "currentStory"
+    ]),
+    story: function() {
+      return this.currentStory(this.group_id);
+    }
   }
 }
 </script>

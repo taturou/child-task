@@ -10,6 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/step/1'
+    },
+    {
+      path: '/step/:group_id',
       name: 'Steps',
       component: Steps
     },

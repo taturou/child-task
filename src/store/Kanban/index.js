@@ -1,8 +1,14 @@
 export default {
   namespaced: true,
   state: {
-    num_tasks: 22,
-    current_story_index: 0,
+    num_tasks: {
+      1: 22,
+      2: 1
+    },
+    current_story_index: {
+      1: 0,
+      2: 8
+    },
     stories: [
       {
         id: 0,
@@ -144,53 +150,92 @@ export default {
         workingTasks: [],
         closedTasks: [],
         wontTasks: []
+      },
+      {
+        id: 8,
+        name: "ねる",
+        due: {
+          hours: 20,
+          minutes: 30
+        },
+        groupId: 2,
+        openedTasks: [
+          {id: 30, title: "おやすみなさい♪"}
+        ],
+        workingTasks: [],
+        closedTasks: [],
+        wontTasks: []
       }
     ]        
   },
   getters: {
-    numStories: state => {
-      return state.stories.length;
-    },
-    numTasks: state => {
-      return state.num_tasks
-    },
-    currentStoryIndex: state => {
-      return state.current_story_index
-    },
-    currentStory: state => {
-      return state.stories[state.current_story_index]
-    },
-    Stories: state => {
-      return state.stories
-    },
-    numOpened: state => {
+    numStories: state => (group_id) => {
       let total = 0;
-      state.stories.forEach((story, index, array) => {total += story.openedTasks.length});
+      state.stories.forEach((story, index, array) => {
+        if (story.groupId === group_id) {
+          total += 1;
+        }
+      })
       return total;
     },
-    numWorking: state => {
+    numTasks: state => (group_id) => {
+      return state.num_tasks[group_id];
+    },
+    currentStoryIndex: state => (group_id) => {
+      return state.current_story_index[group_id]
+    },
+    currentStory: state => (group_id) => {
+      return state.stories[state.current_story_index[group_id]]
+    },
+    Stories: state => (group_id) => {
+      return state.stories.filter((story, index, array) => {
+        return story.groupId === group_id
+      });
+    },
+    numOpened: state => (group_id) => {
       let total = 0;
-      state.stories.forEach((story, index, array) => {total += story.workingTasks.length});
+      state.stories.forEach((story, index, array) => {
+        if (story.groupId === group_id) {
+          total += story.openedTasks.length;
+        }
+      });
       return total;
     },
-    numClosed: state => {
+    numWorking: state => (group_id) => {
       let total = 0;
-      state.stories.forEach((story, index, array) => {total += story.closedTasks.length});
+      state.stories.forEach((story, index, array) => {
+        if (story.groupId === group_id) {
+          total += story.workingTasks.length;
+        }
+      });
       return total;
     },
-    numWont: state => {
+    numClosed: state => (group_id) => {
       let total = 0;
-      state.stories.forEach((story, index, array) => {total += story.wontTasks.length});
+      state.stories.forEach((story, index, array) => {
+        if (story.groupId === group_id) {
+          total += story.closedTasks.length;
+        }
+      });
+      return total;
+    },
+    numWont: state => (group_id) => {
+      let total = 0;
+      state.stories.forEach((story, index, array) => {
+        if (story.groupId === group_id) {
+          total += story.wontTasks.length;
+        }
+      });
       return total;
     }
   },
   mutations: {
-    createOpenedTaskToStory(state, {story}) {
+    createOpenedTaskToStory(state, {story, group_id}) {
       let task = {
-        id: state.num_tasks,
+        id: state.num_tasks[group_id],
         title: "hoge"
       };
-      state.num_tasks += 1;
+      state.num_tasks[group_id] += 1;
       state.stories[story.id].openedTasks.push(task);
     },
     removeOpenedTask(state, {story, task}) {
@@ -198,17 +243,30 @@ export default {
       tasks = tasks.filter((_task) => {return _task.id != task.id});
       state.stories[story.id].openedTasks = tasks;
     },
-    setCurrentStoryIndex(state, {index}) {
-      state.current_story_index = index
+    setCurrentStoryIndex(state, {group_id, index}) {
+      state.current_story_index[group_id] = index
     }
   },
   actions: {
-    toNextStory(context) {
-      let index = context.state.current_story_index + 1
-      if (index >= context.getters.numStories) {
-        index = 0;
+    toNextStory(context, group_id) {
+      let index = context.state.current_story_index[group_id] + 1;
+      while (1) {
+        while (1) {
+          if (index >= context.state.stories.length) {
+            index = 0;
+          } else if (context.state.stories[index].groupId != group_id) {
+            index += 1;
+          } else {
+            break;
+          }
+        }
+        if (index >= context.state.stories.length) {
+          index = 0;
+        } else {
+          break;
+        }        
       }
-      context.commit('setCurrentStoryIndex', {index: index})
+      context.commit('setCurrentStoryIndex', {group_id: group_id, index: index})
     }
   }
 }

@@ -5,18 +5,18 @@
       process-status="process"
       finish-status="success"
       space="50px"
-      :active="currentStoryIndex">
+      :active="currentStoryIndex(group_id)">
       <el-step
-        v-for="(story, index) in Stories"
+        v-for="(story, index) in Stories(group_id)"
         key="story.id">
-        <div slot="title" @click="setCurrentStoryIndex({index: index})">
+        <div slot="title" @click="setCurrentStoryIndex({group_id: group_id, index: index})">
           {{story.name}}
         </div>
       </el-step>
     </el-steps>
     <el-button
       style="margin-top: 12px;"
-      @click="toNextStory">
+      @click="toNextStory(group_id)">
       つぎへ
     </el-button>
   </div>
@@ -29,6 +29,12 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'StepsStory',
+  props: {
+    group_id: {
+      type: Number,
+      required: true,
+    },
+  },
   computed: {
     ...mapGetters("kanban", [
       "Stories",

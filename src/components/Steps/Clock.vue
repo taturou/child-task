@@ -30,6 +30,12 @@ import AnalogClock from '@/components/AnalogClock'
 
 export default {
   name: 'StepsClock',
+  props: {
+    group_id: {
+      type: Number,
+      required: true,
+    },
+  },
   data() {
     return {
       dueColorDial: "white",
@@ -40,9 +46,12 @@ export default {
     'analog-clock': AnalogClock
   },
   computed: {
-    ...mapGetters("kanban", {
-      story: "currentStory"
-    }),
+    ...mapGetters("kanban", [
+      "currentStory"
+    ]),
+    story: function() {
+      return this.currentStory(this.group_id);
+    },
     dueTime: function() {
       return {
         hours: this.story.due.hours,

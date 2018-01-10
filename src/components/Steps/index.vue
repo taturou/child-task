@@ -2,14 +2,20 @@
   <div>
     <el-row>
       <el-col :span="4">
-        <steps-story></steps-story>
+        <steps-story
+          :group_id="group_id">
+        </steps-story>
       </el-col>
       <el-col :span="20">
-        <steps-kanban></steps-kanban>
+        <steps-kanban
+          :group_id="group_id">
+        </steps-kanban>
       </el-col>
     </el-row>
 
-    <steps-clock></steps-clock>
+    <steps-clock
+      :group_id="group_id">
+    </steps-clock>
   </div>
 </template>
 
@@ -20,10 +26,20 @@ import Clock from './Clock.vue'
 
 export default {
   name: 'Steps',
+  data() {
+    return {
+      group_id: 1
+    }
+  },
   components: {
     "steps-story": Story,
     "steps-kanban": Kanban,
     "steps-clock": Clock
+  },
+  beforeRouteUpdate (to, from, next) {
+    console.log("beforeRouteUpdate");
+    this.group_id = parseInt(to.params.group_id);
+    next();
   }
 }
 </script>
